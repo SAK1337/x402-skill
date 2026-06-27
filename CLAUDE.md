@@ -11,12 +11,20 @@ domain context.
 ## Key facts to respect
 - **x402** = payments over the HTTP `402 Payment Required` status: server returns `402` with
   payment requirements → client returns a **signed, gasless stablecoin authorization**
-  (EIP-3009, e.g. USDC) in the x402 payment header → a **facilitator** verifies and settles
-  it → resource is released with settlement details. Approval is a *signature*, not a manually
-  broadcast transaction.
+  (EIP-3009 `transferWithAuthorization`, signed as an EIP-712 typed-data message, e.g. over
+  USDC) in the x402 payment header → a **facilitator** verifies and settles it → resource is
+  released with settlement details. Approval is a *signature*, not a manually broadcast
+  transaction.
+- The `402` response carries an `accepts` list of **one or more** payment requirements, so the
+  client may need to choose among accepted options (e.g. USDC across different networks).
+- EIP-3009 over a stablecoin is the protocol's primary **`exact`** scheme — the pack's scope —
+  not the entirety of x402; the protocol is scheme-extensible (`exact`, `upto`) and broadening
+  toward other rails. Describe the stablecoin exact-scheme flow without assuming it's the only one.
 - Treat exact header/field names as defined by the x402 spec and the chosen facilitator —
-  do not hard-code one naming scheme (the protocol has version drift). Source of truth:
-  https://github.com/x402-foundation/x402 and https://www.x402.org/.
+  do not hard-code one naming scheme (the protocol has real version drift: the home moved
+  `coinbase/x402` → `x402-foundation/x402`, and headers changed from `X-PAYMENT` /
+  `X-PAYMENT-RESPONSE` to `PAYMENT-REQUIRED` / `PAYMENT-SIGNATURE` / `PAYMENT-RESPONSE`).
+  Source of truth: https://github.com/x402-foundation/x402 and https://www.x402.org/.
 - **Shared app stack** (what skills generate): Next.js + Tailwind CSS + shadcn/ui.
 
 ## Conventions

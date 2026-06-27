@@ -23,7 +23,7 @@ budget from actions that require explicit user approval.
 
 #### Scenario: Within budget proceeds autonomously
 - **WHEN** a paid action falls within the configured autonomous budget
-- **THEN** the skill allows the agent to proceed and records the action for the audit trail
+- **THEN** the skill allows the agent to proceed and records the action for the audit trail owned by `wallet-and-spend-control-ui`
 
 #### Scenario: Over threshold requires approval
 - **WHEN** a paid action exceeds the autonomous threshold

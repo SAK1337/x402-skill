@@ -8,8 +8,12 @@ trustworthy chatbot UI around x402 metered HTTP payments.
 
 x402 is an open protocol built on the HTTP `402 Payment Required` status code: a server
 returns `402` with machine-readable payment requirements, the client returns a signed,
-gasless stablecoin payment authorization (e.g. EIP-3009 over USDC) in the x402 payment
-header, and a facilitator verifies and settles it before the resource is released.
+gasless stablecoin payment authorization (e.g. EIP-3009 `transferWithAuthorization`, signed
+as an EIP-712 typed-data message, over USDC) in the x402 payment header, and a facilitator
+verifies and settles it before the resource is released. EIP-3009 over a stablecoin is the
+protocol's primary **`exact`** scheme — the scope this pack targets — not the whole protocol:
+x402 is scheme-extensible (e.g. `exact`, `upto`) and is broadening toward other rails, so
+skills describe the stablecoin exact-scheme flow without assuming it is the only one.
 
 The pack is organized into four phases that map to build order:
 1. **Design foundation** — pack structure + visual/chat-UX design skills.
@@ -52,10 +56,19 @@ The pack is organized into four phases that map to build order:
 
 ## Domain Context
 - **x402 / HTTP 402**: metered, account-less payments over HTTP.
+- **Payment requirements**: the `402` response carries an `accepts` list of one or more
+  payment requirements (scheme, network, asset, amount, recipient), so the client may have to
+  choose among several accepted options (e.g. the same price as USDC on different networks).
 - **Facilitator**: a service that verifies (`/verify`) and settles (`/settle`) payments so
   sellers need no blockchain infrastructure.
 - **Stablecoin settlement**: gasless signed authorizations (EIP-3009, e.g. USDC/EURC) — the
-  user *signs*, they do not manually broadcast an on-chain transaction.
+  user *signs* an EIP-712 typed-data message, they do not manually broadcast an on-chain
+  transaction.
+- **Header/field-name drift**: exact header and field names are version-dependent and MUST
+  NOT be hard-coded. The protocol's home moved from `coinbase/x402` to `x402-foundation/x402`,
+  and header names changed across versions (earlier: `X-PAYMENT` / `X-PAYMENT-RESPONSE`;
+  current foundation spec: `PAYMENT-REQUIRED` / `PAYMENT-SIGNATURE` / `PAYMENT-RESPONSE`).
+  Treat these as illustrative; read names from the spec and chosen facilitator at build time.
 - **Agentic commerce**: the chatbot may purchase paid APIs/tools autonomously within a
   configured budget, with explicit approval required above a threshold.
 

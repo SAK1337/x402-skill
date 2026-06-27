@@ -1,6 +1,6 @@
 ## 1. x402-payment-ux skill
 - [ ] 1.1 Create `skills/x402-payment-ux/SKILL.md` with triggering description
-- [ ] 1.2 Define the full payment state set (free → 402 → quote → sign/approve → submitted → verifying/settling → unlocked → receipt)
+- [ ] 1.2 Define the full payment state set (free → 402 → quote → sign/approve → submitted → verifying/settling → unlocked → receipt), including selecting among multiple accepted payment options when the `402` `accepts` list offers more than one
 - [ ] 1.3 Define failure states (payment failed, insufficient stablecoin balance, spend limit exceeded)
 - [ ] 1.4 Add payment-transparency guidance ("why am I being asked to pay?")
 - [ ] 1.5 Ground states in x402 mechanics (quote from 402 payment requirements, approval = signed authorization, facilitator verify/settle, receipt reflects settlement)

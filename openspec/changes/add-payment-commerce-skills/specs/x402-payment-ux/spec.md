@@ -29,6 +29,10 @@ distinct because settlement is asynchronous and may take time to confirm.
 - **THEN** the skill provides a receipt / transaction-history surface the user can review later
 - **AND** the receipt reflects the settlement details returned by the facilitator (amount, asset, network, and a settlement/transaction reference)
 
+#### Scenario: Multiple payment options offered
+- **WHEN** a `402` response offers more than one accepted payment requirement (the `accepts` list contains several options, e.g. the same price as a stablecoin on different networks)
+- **THEN** the skill defines how the user selects among the offered options before approving, rather than assuming a single fixed quote
+
 ### Requirement: Payment Failure States
 The skill SHALL define distinct states for payment failed, insufficient balance, and spend
 limit exceeded, each with a clear recovery or retry path.
