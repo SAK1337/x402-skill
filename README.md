@@ -41,28 +41,37 @@ Skills are organized in four build-order phases. Each lives under `skills/<name>
 | 4. Quality & trust | `web3-trust-copywriter` | Clear, reassuring copy for payment/wallet/consent/error/privacy surfaces. |
 | 4. Quality & trust | `component-polish-reviewer` | Final pass on spacing, hierarchy, hover states, responsive, microcopy. |
 
-> The skills themselves are being authored via OpenSpec change proposals (see below); the
-> `skills/` directory is populated as each change is implemented.
+> All nine skills are implemented and live under `skills/`. They were authored via OpenSpec
+> change proposals (see below), which are now archived; their requirements are the canonical
+> specs in `openspec/specs/`.
 
 ## Spec-driven development (OpenSpec)
 
 This project uses [OpenSpec](https://github.com/Fission-AI/OpenSpec) for spec-driven work.
 
 ```bash
-openspec list                 # active change proposals
-openspec show <change-id>     # view a proposal and its deltas
-openspec validate --strict    # validate all changes/specs
+openspec list                 # active change proposals (none — all archived)
+openspec list --specs         # canonical capability specs
+openspec show <spec-id>       # view a capability spec
+openspec validate --specs --strict   # validate all canonical specs
 ```
 
-- Proposals live in `openspec/changes/<change-id>/`.
+- Canonical capability specs live in `openspec/specs/<capability>/spec.md`.
+- Archived proposals (their original deltas + tasks) live in `openspec/changes/archive/`.
 - Conventions and domain context live in `openspec/project.md`.
 - AI-assistant instructions live in `openspec/AGENTS.md`.
 
-Current proposals:
-- `add-design-foundation-skills`
-- `add-payment-commerce-skills`
-- `add-implementation-builder-skill`
-- `add-quality-trust-skills`
+All four phase proposals have been implemented and archived, so there are no active changes:
+
+| Proposal | Phase | Status |
+|----------|-------|--------|
+| `add-design-foundation-skills` | 1. Design foundation | ✅ implemented · archived |
+| `add-payment-commerce-skills` | 2. Payment & commerce | ✅ implemented · archived |
+| `add-implementation-builder-skill` | 3. Implementation | ✅ implemented · archived |
+| `add-quality-trust-skills` | 4. Quality & trust | ✅ implemented · archived |
+
+New work starts with a fresh proposal under `openspec/changes/` that modifies these
+canonical specs (`propose → approve → implement → archive`).
 
 ## References
 - x402 protocol: https://www.x402.org/ · https://github.com/x402-foundation/x402
