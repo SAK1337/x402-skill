@@ -1,7 +1,10 @@
 # accessibility-reviewer Specification
 
 ## Purpose
-TBD - created by archiving change add-quality-trust-skills. Update Purpose after archive.
+Reviews the built x402 chatbot UI for accessibility — keyboard navigation, color contrast,
+ARIA semantics, loading-state announcements, and focus management for payment modals and
+dialogs — reporting concrete issues with fixes rather than redesigning.
+
 ## Requirements
 ### Requirement: Accessibility Reviewer Skill
 The pack SHALL provide an `accessibility-reviewer` skill that checks the chatbot UI for

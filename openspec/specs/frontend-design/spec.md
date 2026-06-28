@@ -1,7 +1,10 @@
 # frontend-design Specification
 
 ## Purpose
-TBD - created by archiving change add-design-foundation-skills. Update Purpose after archive.
+Establishes the distinctive, trust-forward visual direction — mood, type scale, color tokens,
+spacing rhythm, and motion — for the x402 chatbot front end before any component is generated,
+steering away from generic "AI" and flashy "crypto dApp" defaults.
+
 ## Requirements
 ### Requirement: Frontend Design Skill
 The pack SHALL provide a `frontend-design` skill that guides Claude to produce distinctive,

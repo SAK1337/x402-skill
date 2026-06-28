@@ -1,7 +1,10 @@
 # skill-pack Specification
 
 ## Purpose
-TBD - created by archiving change add-design-foundation-skills. Update Purpose after archive.
+Defines the shared conventions for the x402 skill pack: the `skills/` directory structure, the
+`SKILL.md` frontmatter format, and the single shared target stack (Next.js + Tailwind CSS +
+shadcn/ui) that every other skill references instead of redefining.
+
 ## Requirements
 ### Requirement: Skill Pack Directory Structure
 The x402 skill pack SHALL live under a top-level `skills/` directory, with each skill in

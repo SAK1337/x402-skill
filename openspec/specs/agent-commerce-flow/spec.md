@@ -1,7 +1,10 @@
 # agent-commerce-flow Specification
 
 ## Purpose
-TBD - created by archiving change add-payment-commerce-skills. Update Purpose after archive.
+Owns the consent and cost-preview UX for agent-initiated spend — naming the action, provider,
+and itemized cost before any charge, and distinguishing actions the agent may take
+autonomously within a configured budget from those that require explicit user approval.
+
 ## Requirements
 ### Requirement: Agent Commerce Flow Skill
 The pack SHALL provide an `agent-commerce-flow` skill for the "the agent wants to buy or

@@ -1,7 +1,10 @@
 # component-polish-reviewer Specification
 
 ## Purpose
-TBD - created by archiving change add-quality-trust-skills. Update Purpose after archive.
+Performs the final refinement pass over the x402 chatbot UI — spacing, visual hierarchy,
+hover/interaction states, responsive behavior, and microcopy — proposing targeted refinements
+that preserve existing functionality rather than redesigning from scratch.
+
 ## Requirements
 ### Requirement: Component Polish Reviewer Skill
 The pack SHALL provide a `component-polish-reviewer` skill that performs a final refinement

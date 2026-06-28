@@ -1,7 +1,10 @@
 # chatbot-ui-designer Specification
 
 ## Purpose
-TBD - created by archiving change add-design-foundation-skills. Update Purpose after archive.
+Owns the chat product and interaction structure of the x402 chatbot — chat history, message
+bubbles, the composer, and the assistant's streaming/thinking/agent-working states — plus
+empty, error, and mobile states and a product-fundamentals checklist completed before coding.
+
 ## Requirements
 ### Requirement: Chatbot UI Designer Skill
 The pack SHALL provide a `chatbot-ui-designer` skill that keeps the chat experience

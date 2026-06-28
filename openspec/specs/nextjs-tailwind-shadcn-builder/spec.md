@@ -1,7 +1,11 @@
 # nextjs-tailwind-shadcn-builder Specification
 
 ## Purpose
-TBD - created by archiving change add-implementation-builder-skill. Update Purpose after archive.
+Implements the x402 chatbot front end on the shared stack by composing the design, chat, and
+payment/commerce skills into running code — scaffolding, streaming responses, the client `402`
+round-trip with server-side facilitator integration, settlement/receipt wiring, dark mode, and
+a mobile-responsive layout.
+
 ## Requirements
 ### Requirement: Implementation Builder Skill
 The pack SHALL provide a `nextjs-tailwind-shadcn-builder` skill that implements the x402

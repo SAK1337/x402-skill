@@ -1,7 +1,10 @@
 # x402-payment-ux Specification
 
 ## Purpose
-TBD - created by archiving change add-payment-commerce-skills. Update Purpose after archive.
+Defines the UI for the full HTTP `402 Payment Required` payment lifecycle and its failure
+states, grounded in real x402 protocol mechanics — a quote derived from the response's payment
+requirements, approval as a signed authorization, and facilitator-performed settlement.
+
 ## Requirements
 ### Requirement: x402 Payment UX Skill
 The pack SHALL provide an `x402-payment-ux` skill that teaches Claude the UI states needed

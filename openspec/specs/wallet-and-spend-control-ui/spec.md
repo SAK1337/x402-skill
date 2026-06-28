@@ -1,7 +1,10 @@
 # wallet-and-spend-control-ui Specification
 
 ## Purpose
-TBD - created by archiving change add-payment-commerce-skills. Update Purpose after archive.
+Owns the spend-visibility surface for the x402 chatbot: wallet connection, stablecoin balance
+display centered on the payment asset, configurable budget/session/daily limits with remaining
+allowance, and an audit trail of past payments and agent-initiated purchases.
+
 ## Requirements
 ### Requirement: Wallet and Spend Control UI Skill
 The pack SHALL provide a `wallet-and-spend-control-ui` skill covering wallet connection,

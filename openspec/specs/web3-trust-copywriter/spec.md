@@ -1,7 +1,10 @@
 # web3-trust-copywriter Specification
 
 ## Purpose
-TBD - created by archiving change add-quality-trust-skills. Update Purpose after archive.
+Writes clear, reassuring user-facing copy for the x402 chatbot's payment, wallet, consent,
+error, and privacy surfaces, demystifying crypto-native metered payments in plain language
+that does not scare or confuse non-crypto users.
+
 ## Requirements
 ### Requirement: Web3 Trust Copywriter Skill
 The pack SHALL provide a `web3-trust-copywriter` skill that writes user-facing copy for
